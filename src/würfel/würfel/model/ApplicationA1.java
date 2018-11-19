@@ -70,5 +70,8 @@ public class ApplicationA1 extends Application {
     @Override
     public void setStart() {
         gestoppt = false;
+        if(thd == null){
+            starteBerechnung();
+        }
     }
 }

@@ -59,7 +59,7 @@ public class Fenster extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblNumber.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
+        lblNumber.setFont(new java.awt.Font("Tempus Sans ITC", 1, 120)); // NOI18N
         lblNumber.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNumber.setMaximumSize(new java.awt.Dimension(1000, 1000));
         lblNumber.setMinimumSize(new java.awt.Dimension(200, 0));
@@ -77,7 +77,8 @@ public class Fenster extends javax.swing.JFrame
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.PAGE_END);
 
-        pack();
+        setSize(new java.awt.Dimension(468, 486));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
   /**

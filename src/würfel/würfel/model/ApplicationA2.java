@@ -24,9 +24,9 @@ public class ApplicationA2 extends Application {
 
     @Override
     public void starteBerechnung() {
-        if (thd == null) {
-            thd = new Thread(this);
-            thd.start();
+        if (this.thd == null) {
+            this.thd = new Thread(this);
+            this.thd.start();
             System.out.println("Thread gestartet!");
         }
     }
@@ -35,12 +35,13 @@ public class ApplicationA2 extends Application {
     public void run() {
         System.out.println("Führe Aufgabe 2 aus...");
         while (true) {
-            if(gestoppt){
-                break;
-            }
             berechneZahl();
-            this.setChanged();
-            this.notifyObservers();
+            if (gestoppt) {
+                break;
+            } else {
+                this.setChanged();
+                this.notifyObservers();
+            }
         }
         System.out.println("Run gestoppt!");
 
@@ -65,12 +66,14 @@ public class ApplicationA2 extends Application {
     @Override
     public void setStopp() {
         gestoppt = true;
-        this.thd = null; //das Deferenzieren allein richt nicht um run zu löschen?
+        this.thd = null; //das Deferenzieren allein richt nicht um run zu stoppen?
     }
 
     @Override
     public void setStart() {
         gestoppt = false;
-        starteBerechnung();
+        if (thd == null){
+            starteBerechnung();
+        }
     }
 }

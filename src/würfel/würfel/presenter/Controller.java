@@ -37,7 +37,6 @@ public class Controller implements ActionListener {
         if (src == view.getBtnStart()) {
             System.out.println("Start gedrückt!");
             model.setStart();
-            model.starteBerechnung();
 
         }
         if (src == view.getBtnStopp()) {

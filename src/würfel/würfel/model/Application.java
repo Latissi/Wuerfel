@@ -22,10 +22,6 @@ public class Application extends Observable implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
-            this.setChanged();
-            this.notifyObservers();
-        }
 
     }
     
