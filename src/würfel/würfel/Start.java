@@ -6,6 +6,8 @@
 package würfel;
 
 import würfel.model.Application;
+import würfel.model.ApplicationA1;
+import würfel.model.ApplicationA2;
 import würfel.presenter.Adapter;
 import würfel.presenter.Controller;
 import würfel.view.Fenster;
@@ -19,7 +21,7 @@ public class Start {
 
     public Start() {
         Fenster frm = new Fenster();
-        Application app = new Application();
+        Application app = new ApplicationA2();
         Adapter adp = new Adapter(app, frm);
         Controller cntrl = new Controller(app, frm);
         cntrl.registerEvents();

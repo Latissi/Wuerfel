@@ -8,6 +8,7 @@ package würfel.presenter;
 import java.util.Observable;
 import java.util.Observer;
 import würfel.model.Application;
+import würfel.model.ApplicationA1;
 import würfel.view.Fenster;
 
 /**

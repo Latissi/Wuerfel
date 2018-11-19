@@ -8,6 +8,7 @@ package würfel.presenter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import würfel.model.Application;
+import würfel.model.ApplicationA1;
 import würfel.view.Fenster;
 
 /**
@@ -35,11 +36,13 @@ public class Controller implements ActionListener {
 
         if (src == view.getBtnStart()) {
             System.out.println("Start gedrückt!");
+            model.setStart();
             model.starteBerechnung();
 
         }
         if (src == view.getBtnStopp()) {
             System.out.println("Stopp gedrückt!");
+            model.setStopp();
 
         }
     }

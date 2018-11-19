@@ -9,60 +9,34 @@ import java.util.Observable;
 
 /**
  *
- * @author nobody
+ * @author Fabian
  */
 public class Application extends Observable implements Runnable {
 
-    private Thread thd;
-    private int zahl;
-    private boolean gestoppt;
-
     public Application() {
-        zahl = 0;
-        thd = null;
-        gestoppt = false;
 
     }
 
     public void starteBerechnung() {
-        if (thd == null) {
-            thd = new Thread(this);
-            thd.start();
-            System.out.println("Thread gestartet!");
-        }
     }
 
     @Override
     public void run() {
         while (true) {
-            berechneZahl();
             this.setChanged();
             this.notifyObservers();
-
         }
 
     }
-
-    private void berechneZahl() {
-        zahl = 1 + (int) (Math.random() * 6);
-        long sleeptime = (long) (1000 + 5000 * Math.random());
-        try {
-            Thread.sleep(sleeptime);
-        } catch (InterruptedException ix) {
-            System.err.println(ix);
-        }
-        System.out.println("Zahl berechnet!");
+    
+    public int getZahl(){
+        return 0;
     }
 
-    public int getZahl() {
-        return this.zahl;
-    }
-
-    public void setGestoppt() {
-        gestoppt = true;
+    public void setStopp() {
     }
 
     public void setStart() {
-        gestoppt = false;
     }
+    
 }
