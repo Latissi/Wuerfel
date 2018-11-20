@@ -11,7 +11,7 @@ import java.util.Observable;
  *
  * @author Fabian
  */
-public class Application extends Observable implements Runnable {
+public abstract class Application extends Observable implements Runnable {
 
     public Application() {
 
